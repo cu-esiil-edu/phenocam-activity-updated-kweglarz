@@ -132,7 +132,7 @@ View(GR_sites)
 **Challenge**: Can you subset the sitelist_table by a different primary vegetation type? How about by a different variable (table column)? Use the code cell below.
 
 ```{r}
-
+WL_sites <- subset(sitelist_table, primary_veg_type == "WL")
 ```
 
 #### Create a Map of the PhenoCam Sites
@@ -193,10 +193,10 @@ Now, let's view some PhenoCam images and greenness data. Choose a site to explor
 ```{r}
 # Choose site to explore 
 # Enter name exactly as it appears in the table/on the website
-site_name = "lacclair"
+site_name = "siwetland"
 
 # Indicate vegetation type (listed on site page)
-veg = "DB"
+veg = "WL"
 
 # Choose data year (for downloading images later)
 year = 2022
@@ -364,7 +364,7 @@ Next, we'll download some photos from your chosen site. Images are typically tak
 ```{r}
 # Download PhenoCam images
 download_midday_images(site = site_name,
-                       y = year, 
+                       y = 2019, 
                        months = 1:12, 
                        days = 15,
                        download_dir = dir)
